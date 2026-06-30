@@ -14,3 +14,22 @@
   dots.forEach((d, n) => d.addEventListener("click", () => go(n)));
   setInterval(() => go(i + 1), 5000);
 })();
+
+// Mobile nav toggle
+(function () {
+  const header = document.getElementById("siteHeader");
+  const toggle = document.getElementById("navToggle");
+  const panel = document.getElementById("navPanel");
+  if (!header || !toggle) return;
+  toggle.addEventListener("click", () => {
+    const open = header.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  // close when a link is tapped
+  panel?.addEventListener("click", (e) => {
+    if (e.target.closest("a")) {
+      header.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+})();

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
 
@@ -22,7 +23,7 @@
     <div class="section__overlay"></div>
 
     <!-- nav overlays the hero -->
-    <header class="site-header">
+    <header class="site-header" id="siteHeader">
       <div class="container">
         <div class="nav-desktop__inner">
           <a class="brand" href="#" aria-label="The Swiss Holiday Company">
@@ -33,7 +34,10 @@
               <span class="brand__co">Holiday Company</span>
             </span>
           </a>
-          <nav class="nav-desktop__right">
+          <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="nav-desktop__right" id="navPanel">
             <ul class="nav-desktop__list">
               <li><a href="#">Holiday Styles</a></li>
               <li><a href="#">Scenic Rail</a></li>
