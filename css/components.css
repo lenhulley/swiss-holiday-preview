@@ -1,0 +1,104 @@
+/* ============================================================
+   Homepage section components — Swiss Holiday Co
+   Class names mirror the Figma node names (section__hero-home, nav-desktop…)
+   ============================================================ */
+
+/* ---------- Top navigation (overlays the hero) ------------- */
+.site-header {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+}
+.nav-desktop__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 116px;
+}
+.nav-desktop__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-32);
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.nav-desktop__list a {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: var(--fw-medium);
+  color: var(--text-inverse);
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+.nav-desktop__list a:hover { opacity: .85; }
+
+/* Brand lockup (CSS recreation of the logo; swap for supplied asset later) */
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand__flag {
+  width: 46px; height: 46px;
+  background: var(--red-500);
+  border-radius: 8px;
+  position: relative;
+  flex: 0 0 auto;
+}
+.brand__flag::before,
+.brand__flag::after {
+  content: ""; position: absolute; background: #fff; border-radius: 1px;
+}
+.brand__flag::before { width: 22px; height: 7px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.brand__flag::after  { width: 7px; height: 22px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.brand__word { line-height: 1; }
+.brand__the    { font-family: var(--font-display); font-size: 13px; color: var(--neutral-500); display: block; }
+.brand__swiss  { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--red-500); display: block; letter-spacing: .5px; }
+.brand__co     { font-family: var(--font-display); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--neutral-500); display: block; }
+/* On the hero (dark imagery) the wordmark greys read light */
+.site-header .brand__the,
+.site-header .brand__co { color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.3); }
+.site-header .brand__swiss { color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.35); }
+
+.nav-desktop__right { display: flex; align-items: center; gap: var(--space-24); }
+
+/* ---------- Hero ------------------------------------------- */
+.section__hero-home {
+  position: relative;
+  height: var(--hero-height);
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero__slides { position: absolute; inset: 0; }
+.hero__slide {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero__slide.is-active { opacity: 1; }
+.section__overlay {
+  position: absolute; inset: 0;
+  background: var(--hero-scrim);
+  z-index: 1;
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 88px;
+  gap: var(--space-24);
+}
+.hero__title {
+  color: var(--text-inverse);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  font-weight: var(--fw-medium);
+  max-width: none;
+  text-shadow: 0 2px 14px rgba(0,0,0,.35);
+}
+.hero__cta { align-self: flex-start; }
+
+/* hero pagination dots */
+.hero__dots { display: flex; gap: 10px; position: relative; z-index: 2; }
+.hero__dot { width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,.5); border: 0; }
+.hero__dot.is-active { background: #fff; width: 28px; }
