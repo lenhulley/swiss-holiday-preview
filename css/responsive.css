@@ -42,6 +42,9 @@
   .nav-toggle { display: flex; z-index: 30; }
   /* v8 mobile menu is WHITE, full-height, 3-level drill accordion */
   #siteHeader.nav-open { background: #fff; }
+  /* on the white menu the inverse (white) logo is invisible → swap to default */
+  #siteHeader.nav-open .brand__logo--inverse { display: none; }
+  #siteHeader.nav-open .brand__logo--default { display: block; }
   .nav-desktop__right {
     position: fixed; top: 100px; left: 0; right: 0; bottom: 0;
     flex-direction: column; align-items: stretch; gap: 0;

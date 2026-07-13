@@ -91,7 +91,12 @@
 .mega__card-btn svg { width: 18px; height: 18px; }
 .mega__card:hover .mega__card-btn { background: var(--teal-600); }
 
-/* Brand lockup (CSS recreation of the logo; swap for supplied asset later) */
+/* Brand logo — Richard's real SVG (logo-default light / logo-inverse dark) */
+.brand__logo { height: 52px; width: auto; display: block; }
+.brand__logo--footer { height: 60px; }
+.brand__logo--default { display: none; }   /* hero uses inverse (white) to match nav links */
+
+/* Brand lockup (legacy CSS recreation — retained for fallback) */
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand__flag {
   width: 46px; height: 46px;
