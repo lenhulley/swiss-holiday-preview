@@ -313,8 +313,8 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
 .footer-news h4 { font-family: var(--font-display); font-size: 20px; font-weight: var(--fw-medium); margin: 0 0 4px; }
 .footer-news p { color: rgba(255,255,255,.8); margin: 0 0 var(--space-16); }
 .footer-news__form { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-16); }
-.footer-news__form input { padding: 14px var(--space-16); border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,.4); background: var(--navy-500); color: #fff; font-size: 15px; }
-.footer-news__form input::placeholder { color: rgba(255,255,255,.6); }
+.footer-news__form input { padding: 14px var(--space-12); border-radius: var(--radius-lg); border: 1px solid var(--border-default); background: var(--neutral-white); color: var(--navy-500); font-size: 15px; }
+.footer-news__form input::placeholder { color: var(--neutral-500); }
 .footer-news__form input.is-invalid { border-color: #ff8a80; box-shadow: 0 0 0 2px rgba(255,138,128,.25); }
 .footer-news__form button { grid-column: 1; justify-self: start; width: auto; margin-top: var(--space-4); background: var(--teal-500); color: #fff; border: 0; border-radius: var(--radius-sm); padding: 12px var(--space-32); font-weight: 700; letter-spacing: .04em; }
 .footer-news__form button:hover { background: var(--teal-600); }
