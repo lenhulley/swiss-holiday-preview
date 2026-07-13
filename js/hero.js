@@ -57,6 +57,10 @@
     body.className = "nav-acc__body";
     body.innerHTML = cols.innerHTML;
     li.appendChild(body);
+    // 2nd-level: each column group (Signature Holidays…) collapses to its links
+    body.querySelectorAll(".mega__col-title").forEach((t) => {
+      t.addEventListener("click", () => t.parentElement.classList.toggle("acc-open"));
+    });
     const link = li.querySelector("a");
     link.setAttribute("aria-expanded", "false");
     link.addEventListener("click", (e) => {
