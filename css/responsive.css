@@ -41,19 +41,32 @@
   .nav-desktop__inner { height: 76px; }
   .nav-toggle { display: flex; z-index: 30; }
   .nav-desktop__right {
-    position: absolute; top: 100%; left: 0; right: 0;
+    position: fixed; top: 100px; left: 0; right: 0; bottom: 0;
     flex-direction: column; align-items: stretch; gap: 0;
     background: var(--navy-500);
-    max-height: 0; overflow: hidden;
-    transition: max-height .3s ease;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s;
     box-shadow: 0 12px 24px rgba(0,0,0,.2);
+    z-index: 20;
   }
-  #siteHeader.nav-open .nav-desktop__right { max-height: 560px; padding-block: var(--space-12); }
+  #siteHeader.nav-open .nav-desktop__right { opacity: 1; visibility: visible; transform: translateY(0); padding-block: var(--space-12); }
   .nav-desktop__list { flex-direction: column; gap: 0; width: 100%; }
-  .nav-desktop__list a { display: flex; justify-content: space-between; padding: 15px var(--container-pad); text-shadow: none; }
-  .nav-desktop__list a:hover { background: rgba(255,255,255,.08); }
-  .nav-menu, .mega-wrap { display: none; }    /* mega-menu collapses on mobile */
+  .nav-desktop__list > li > a { display: flex; justify-content: space-between; align-items: center; padding: 15px var(--container-pad); text-shadow: none; }
+  .nav-desktop__list > li > a:hover { background: rgba(255,255,255,.08); }
+  .mega-wrap { display: none; }               /* desktop mega panel hidden on mobile */
   .nav-desktop__right .btn { margin: var(--space-12) var(--container-pad) var(--space-8); justify-content: center; }
+
+  /* Mobile accordion (reuses mega column content) */
+  .nav-acc__body { display: none; padding: var(--space-4) 0 var(--space-12); background: rgba(0,0,0,.14); }
+  .has-menu.is-expanded > .nav-acc__body { display: block; }
+  .has-menu.is-expanded > a .nav-caret { transform: rotate(180deg); }
+  .nav-acc__body .mega__col { padding: var(--space-8) var(--container-pad) 0; }
+  .nav-acc__body .mega__col-title { color: rgba(255,255,255,.95); font-size: 14px; font-weight: var(--fw-semibold); margin: var(--space-8) 0 var(--space-4); }
+  .nav-acc__body .mega__col ul { gap: 0; }
+  .nav-acc__body .mega__col a { display: block; color: rgba(255,255,255,.8); font-size: 15px; padding: 8px 0; white-space: normal; }
+  .nav-acc__body .mega__col a:hover { color: #fff; background: none; }
+  .nav-acc__body .mega__viewall { color: rgba(255,255,255,.95) !important; }
 }
 
 /* ---------------- ≤768: large phone ---------------- */

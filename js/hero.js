@@ -47,6 +47,29 @@
   });
 })();
 
+// Mobile nav accordion — reuse mega column content under each nav item
+(function () {
+  const items = Array.from(document.querySelectorAll(".has-menu[data-mega]"));
+  items.forEach((li) => {
+    const cols = document.querySelector(`.mega__cols[data-cols="${li.dataset.mega}"]`);
+    if (!cols) return;
+    const body = document.createElement("div");
+    body.className = "nav-acc__body";
+    body.innerHTML = cols.innerHTML;
+    li.appendChild(body);
+    const link = li.querySelector("a");
+    link.setAttribute("aria-expanded", "false");
+    link.addEventListener("click", (e) => {
+      if (window.matchMedia("(max-width: 900px)").matches) {
+        e.preventDefault();
+        e.stopPropagation();   // expand only — don't trigger the menu-close handler
+        const open = li.classList.toggle("is-expanded");
+        link.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+    });
+  });
+})();
+
 // Mobile nav toggle
 (function () {
   const header = document.getElementById("siteHeader");
