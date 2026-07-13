@@ -105,7 +105,7 @@
   --fw-bold:     700;
 
   /* --- Layout -------------------------------------------- */
-  --container-max: 1224px;  /* v8 design frame width */
+  --container-max: 1440px;  /* v8 canonical desktop frame (Home was dragged to 1224); content = 1280 */
   --container-pad: 80px;    /* desktop side gutter (Spacing/Section/Horizontal) */
   --hero-height:   720px;
   --section-pad:   96px;    /* Spacing/Section/Default */
