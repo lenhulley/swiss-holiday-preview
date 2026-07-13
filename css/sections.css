@@ -99,7 +99,7 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
   cursor: pointer; transition: background-color .18s ease;
 }
 .hsearch__submit:hover { background: #f0b91a; }
-.hsearch__submit svg { width: 22px; height: 22px; }
+.hsearch__submit svg, .hsearch__submit-ic { width: 22px; height: 22px; display: block; }
 .hsearch__result { margin: var(--space-4) 0 0; font-size: 14px; color: var(--navy-500); font-weight: var(--fw-semibold); }
 
 /* Guests stepper popover */
@@ -195,17 +195,19 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
 /* ---------- 7. Expertise banner ---------------------------- */
 .banner-expertise {
   position: relative;
-  background: #eef2f6;
+  background: #e3ebf0;
   text-align: center;
   padding-block: var(--space-64);
   overflow: hidden;
   isolation: isolate;
 }
-.banner-expertise::before {
+.banner-expertise::before {           /* Richard's real sketch background */
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background: url("../assets/figma/expertise-bg.jpg") center/cover no-repeat;
+}
+.banner-expertise::after {            /* v8 overlay: rgba(227,235,240,.75) */
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: url("assets/img/hero-2.jpg") center/cover no-repeat;
-  filter: grayscale(1) brightness(1.35) contrast(.9);
-  opacity: .14;
+  background: rgba(227,235,240,.75);
 }
 .banner-expertise__inner { display: flex; flex-direction: column; align-items: center; gap: var(--space-20); }
 .banner-expertise__flag { width: 64px; height: 64px; background: var(--red-500); border-radius: var(--radius-lg); position: relative; }
@@ -215,11 +217,11 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
 .banner-expertise__text { font-family: var(--font-display); font-size: 38px; line-height: 1.25; color: var(--text-primary); margin: 0; font-weight: var(--fw-medium); }
 .banner-expertise__text em { font-style: italic; }
 .btn--ghost-navy {
-  background: transparent; color: var(--navy-500); border-color: rgba(0,46,93,.4);
-  text-transform: uppercase; font-size: 13px; letter-spacing: .06em; font-weight: var(--fw-semibold);
-  padding: 11px var(--space-20);
+  background: rgba(255,255,255,.3); color: var(--navy-500); border-color: #fff;
+  text-transform: uppercase; font-size: 14px; letter-spacing: .04em; font-weight: var(--fw-medium);
+  padding: 12px var(--space-24);
 }
-.btn--ghost-navy:hover { background: rgba(0,46,93,.06); border-color: var(--navy-500); }
+.btn--ghost-navy:hover { background: rgba(255,255,255,.55); }
 .btn--ghost-navy .btn__icon { width: 16px; height: 16px; }
 
 /* ---------- 8. Split: explore region ----------------------- */
@@ -244,14 +246,16 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
 
 /* ---------- 10. Testimonials ------------------------------- */
 .rating-row { display: flex; align-items: center; justify-content: center; gap: var(--space-12); margin: var(--space-32) 0 var(--space-8); font-weight: 700; color: var(--text-primary); }
-.rating-row .stars { color: var(--gold-400); letter-spacing: 2px; font-size: 22px; }
+.rating-row .stars { display: inline-flex; align-items: center; gap: 2px; }
+.star { width: 18px; height: 18px; display: block; }
+.rating-row .star { width: 22px; height: 22px; }
 .rating-row .feefo { font-weight: 800; color: #43423d; font-style: italic; }
 .rating-sub { text-align: center; font-size: 14px; color: var(--text-muted); margin-bottom: var(--space-48); }
 .rating-sub a { color: var(--text-brand); }
 .testi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--grid-gap); }
 .testi { display: flex; flex-direction: column; gap: var(--space-12); }
-.testi__quote { font-family: Georgia, serif; font-size: 44px; line-height: .6; color: var(--navy-500); height: 24px; }
-.testi__stars { color: var(--gold-400); letter-spacing: 2px; }
+.testi__quote { width: 40px; height: 28px; display: block; }
+.testi__stars { display: inline-flex; align-items: center; gap: 2px; }
 .testi__text { font-size: 14px; line-height: 1.5; color: var(--navy-500); }
 .testi__by { font-size: 13px; color: var(--text-muted); padding-top: var(--space-16); border-top: 1px solid var(--border-default); margin-top: auto; }
 
@@ -271,10 +275,8 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
 .brochure { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-48); align-items: center; }
 .brochure__text h2 { font-size: 40px; margin-bottom: var(--space-20); }
 .brochure__text p { font-size: 15px; color: var(--text-body); margin-bottom: var(--space-16); }
-.brochure__covers { position: relative; height: 360px; }
-.brochure__cover { position: absolute; width: 240px; height: 330px; border-radius: var(--radius-md); object-fit: cover; box-shadow: var(--shadow-md); }
-.brochure__cover--1 { left: 40px; top: 10px; transform: rotate(-5deg); z-index: 2; }
-.brochure__cover--2 { left: 260px; top: 20px; transform: rotate(4deg); }
+.brochure__covers { display: flex; justify-content: center; }
+.brochure__single { width: 100%; max-width: 520px; height: auto; }
 
 /* ---------- 13. Blog -------------------------------------- */
 .section__header--split { display: flex; align-items: center; justify-content: space-between; text-align: left; max-width: none; margin-bottom: var(--space-40); }
