@@ -39,11 +39,33 @@
           </button>
           <nav class="nav-desktop__right" id="navPanel">
             <ul class="nav-desktop__list">
-              <li><a href="#">Holiday Styles</a></li>
-              <li><a href="#">Scenic Rail</a></li>
-              <li><a href="#">Destinations</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Manage Booking</a></li>
+              <li class="has-menu">
+                <a href="#" aria-haspopup="true">Holiday Styles <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+                <div class="nav-menu">
+                  <a href="#">Lakes &amp; Mountains</a><a href="#">Scenic Rail Holidays</a><a href="#">Walking Holidays</a>
+                  <a href="#">Family Holidays</a><a href="#">City Breaks</a><a href="#">Multi Centre Holidays</a>
+                </div>
+              </li>
+              <li class="has-menu">
+                <a href="#" aria-haspopup="true">Scenic Rail <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+                <div class="nav-menu">
+                  <a href="#">Glacier Express</a><a href="#">Bernina Express</a><a href="#">GoldenPass Express</a><a href="#">Luzern–Interlaken Express</a>
+                </div>
+              </li>
+              <li class="has-menu">
+                <a href="#" aria-haspopup="true">Destinations <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+                <div class="nav-menu">
+                  <a href="#">Interlaken</a><a href="#">Zermatt</a><a href="#">Lucerne</a><a href="#">Grindelwald</a>
+                  <a href="#">St. Moritz</a><a href="#">Zurich</a><a href="#">Geneva</a><a href="#">Davos</a>
+                </div>
+              </li>
+              <li class="has-menu">
+                <a href="#" aria-haspopup="true">Support <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+                <div class="nav-menu">
+                  <a href="#">Contact Us</a><a href="#">FAQs</a><a href="#">Travel Updates</a><a href="#">ATOL Protection</a>
+                </div>
+              </li>
+              <li class="nav-account"><a href="#"><svg class="nav-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg> Manage Booking</a></li>
             </ul>
             <a class="btn btn--brand" href="#">Contact Us</a>
           </nav>
@@ -89,22 +111,83 @@
   <!-- ===================== 3a. SEARCH BAR ===================== -->
   <section class="search-block">
     <div class="container">
-      <h2>Find Your <em>Perfect</em> Swiss Holiday</h2>
-      <form class="search-bar" onsubmit="return false">
-        <div class="search-tabs">
-          <button class="search-tab is-active" type="button">All Holidays</button>
-          <button class="search-tab" type="button">Winter Ski</button>
-          <button class="search-tab" type="button">Scenic Itineraries</button>
+      <h2 class="search-block__title">Find Your <em>Perfect</em> Swiss Holiday</h2>
+      <form class="hsearch" id="holidaySearch" novalidate>
+        <div class="hsearch__tabs" role="tablist">
+          <button class="hsearch__tab is-active" type="button" data-tab="all" role="tab" aria-selected="true">All Holidays</button>
+          <button class="hsearch__tab" type="button" data-tab="winter" role="tab" aria-selected="false">Winter Ski</button>
         </div>
-        <div class="search-fields">
-          <label class="search-field"><span>Departing from</span><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-.9 1.7l5.6 3.3-2.1 2.1H4l-1 1 4 1.5L9.5 21l1-1v-2.7l2.1-2.1 3.3 5.6a1 1 0 0 0 1.7-.9Z"/></svg>Enter your airport</span></label>
-          <label class="search-field"><span>Destination</span><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Where to go</span></label>
-          <label class="search-field"><span>Departure date</span><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Departing</span></label>
-          <label class="search-field"><span>Nights</span><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>Stay</span></label>
-          <label class="search-field"><span>Guests</span><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>guests</span></label>
-          <button class="search-submit" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Search Holidays</button>
+        <div class="hsearch__fields">
+          <!-- Departing from (icon right) -->
+          <div class="hfield hfield--depart">
+            <label for="fldAirport">Departing from</label>
+            <div class="hinput">
+              <input id="fldAirport" name="airport" list="airports" placeholder="Enter Your Airport" autocomplete="off">
+              <svg class="hinput__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5a2.1 2.1 0 0 0-3-3L13 8 4.8 6.2a1 1 0 0 0-.9 1.7l5.6 3.3-2.1 2.1H4l-1 1 4 1.5L9.5 21l1-1v-2.7l2.1-2.1 3.3 5.6a1 1 0 0 0 1.7-.9Z"/></svg>
+            </div>
+          </div>
+          <!-- Destination (icon right) -->
+          <div class="hfield hfield--dest">
+            <label for="fldDest">Destination</label>
+            <div class="hinput">
+              <input id="fldDest" name="destination" list="destinations" placeholder="Where to go" autocomplete="off">
+              <svg class="hinput__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 11-8 11s-8-5-8-11a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+          </div>
+          <!-- Departure date (icon left) -->
+          <div class="hfield hfield--date">
+            <label for="fldDate">Departure date</label>
+            <div class="hinput hinput--icon-left">
+              <svg class="hinput__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 9.5h18"/></svg>
+              <input id="fldDate" name="date" type="text" placeholder="Departing" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+            </div>
+          </div>
+          <!-- Duration (icon left) -->
+          <div class="hfield hfield--duration">
+            <label for="fldNights">Duration</label>
+            <div class="hinput hinput--icon-left">
+              <svg class="hinput__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+              <select id="fldNights" name="nights" class="hselect">
+                <option value="" selected disabled hidden>Nights</option>
+                <option>3 nights</option><option>5 nights</option><option>7 nights</option>
+                <option>10 nights</option><option>14 nights</option><option>21 nights</option>
+              </select>
+            </div>
+          </div>
+          <!-- Guests (icon left, popover) -->
+          <div class="hfield hfield--guests">
+            <label for="fldGuests">Guests</label>
+            <div class="hinput hinput--icon-left">
+              <svg class="hinput__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6M17.5 14.2A5.5 5.5 0 0 1 20.5 19"/></svg>
+              <button type="button" id="fldGuests" class="hinput__btn" aria-haspopup="true" aria-expanded="false"><span class="hinput__btn-ph">Guests</span></button>
+            </div>
+            <div class="guests-pop" id="guestsPop" hidden>
+              <div class="guests-row"><div><strong>Adults</strong><small>Age 16+</small></div><div class="stepper"><button type="button" data-step="adults" data-dir="-1" aria-label="Fewer adults">−</button><span data-count="adults">2</span><button type="button" data-step="adults" data-dir="1" aria-label="More adults">+</button></div></div>
+              <div class="guests-row"><div><strong>Children</strong><small>Age 0–15</small></div><div class="stepper"><button type="button" data-step="children" data-dir="-1" aria-label="Fewer children">−</button><span data-count="children">0</span><button type="button" data-step="children" data-dir="1" aria-label="More children">+</button></div></div>
+              <button type="button" class="guests-apply" id="guestsApply">Apply</button>
+            </div>
+          </div>
+          <!-- Submit -->
+          <div class="hfield hfield--submit">
+            <button type="submit" class="hsearch__submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              Search Holidays
+            </button>
+          </div>
         </div>
+        <p class="hsearch__result" id="searchResult" role="status" hidden></p>
       </form>
+      <datalist id="airports">
+        <option value="London Heathrow (LHR)"></option><option value="London Gatwick (LGW)"></option>
+        <option value="Manchester (MAN)"></option><option value="Birmingham (BHX)"></option>
+        <option value="Edinburgh (EDI)"></option><option value="Bristol (BRS)"></option>
+        <option value="Glasgow (GLA)"></option><option value="London City (LCY)"></option>
+      </datalist>
+      <datalist id="destinations">
+        <option value="Interlaken"></option><option value="Zermatt"></option><option value="Lucerne"></option>
+        <option value="Grindelwald"></option><option value="St. Moritz"></option><option value="Wengen"></option>
+        <option value="Zurich"></option><option value="Geneva"></option><option value="Davos"></option><option value="Verbier"></option>
+      </datalist>
     </div>
   </section>
 
@@ -121,7 +204,7 @@
         <button class="filter-tab" type="button">Latest Offers</button>
         <button class="filter-tab" type="button">What’s Trending</button>
       </div>
-      <div class="card-grid-4">
+      <div class="scroll-cards">
         <article class="dest-card">
           <img class="dest-card__img" src="assets/img/dest-1.jpg" alt="Interlaken" />
           <div class="dest-card__body">
@@ -180,7 +263,7 @@
         <button class="filter-tab" type="button">Scenic Routes</button>
         <button class="filter-tab" type="button">What’s Trending</button>
       </div>
-      <div class="card-grid-4">
+      <div class="scroll-cards">
         <article class="dest-card"><img class="dest-card__img" src="assets/img/hero-1.jpg" alt="Glacier Express"><div class="dest-card__body"><span class="dest-card__region">Scenic Journey</span><h3 class="dest-card__title">Glacier Express</h3><p class="dest-card__desc">Travel aboard Switzerland’s most famous panoramic train, crossing dramatic mountain passes, deep gorges and spectacular alpine scenery.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
         <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-2.jpg" alt="Bernina Express"><div class="dest-card__body"><span class="dest-card__region">Scenic Journey</span><h3 class="dest-card__title">Bernina Express</h3><p class="dest-card__desc">Journey across the UNESCO-listed Bernina route, travelling from alpine glaciers to Mediterranean-style valleys on one of Europe’s highest railways.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
         <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-3.jpg" alt="GoldenPass Express"><div class="dest-card__body"><span class="dest-card__region">Scenic Journey</span><h3 class="dest-card__title">GoldenPass Express</h3><p class="dest-card__desc">Experience a seamless journey between Lucerne and Montreux, winding through lakeside towns, mountain villages and breathtaking Swiss countryside.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
@@ -203,7 +286,7 @@
         <button class="filter-tab" type="button">Winter Journeys</button>
         <button class="filter-tab" type="button">What’s Trending</button>
       </div>
-      <div class="card-grid-4">
+      <div class="scroll-cards">
         <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-4.jpg" alt="Zermatt"><div class="dest-card__body"><span class="dest-card__region">Winter Ski &amp; Sports</span><h3 class="dest-card__title">Zermatt</h3><p class="dest-card__desc">Beneath the iconic Matterhorn, Zermatt offers world-class skiing, charming alpine streets and breathtaking mountain scenery.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
         <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-1.jpg" alt="Verbier"><div class="dest-card__body"><span class="dest-card__region">Winter Ski &amp; Sports</span><h3 class="dest-card__title">Verbier</h3><p class="dest-card__desc">One of the world’s great ski resorts, renowned for its vibrant atmosphere, extensive slopes and spectacular alpine views.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
         <article class="dest-card"><img class="dest-card__img" src="assets/img/hero-4.jpg" alt="St. Moritz"><div class="dest-card__body"><span class="dest-card__region">Winter Ski &amp; Sports</span><h3 class="dest-card__title">St. Moritz</h3><p class="dest-card__desc">Famed for luxury, glamour and world-class winter sport, St. Moritz combines outstanding skiing with elegant alpine living.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
@@ -214,20 +297,24 @@
   </section>
 
   <!-- ===================== 6. HOLIDAY STYLES (BENTO) ===================== -->
-  <section class="section">
+  <section class="section section--sand">
     <div class="container">
       <div class="section__header">
         <span class="eyebrow">Our Holiday Types</span>
         <h2>Find <em>Your Ideal</em> Style</h2>
         <p>From lakeside relaxation and scenic rail journeys to alpine adventures and festive escapes, explore holiday styles designed around how you love to travel.</p>
       </div>
-      <div class="bento-grid">
-        <article class="bento-card"><img src="assets/img/dest-1.jpg" alt=""><div class="bento-card__body"><h3 class="bento-card__title">Lakes &amp; Mountains</h3><p class="bento-card__desc">Discover Switzerland’s breathtaking alpine scenery, crystal-clear lakes and unforgettable mountain adventures year-round.</p><a class="bento-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="bento-card"><img src="assets/img/hero-1.jpg" alt=""><div class="bento-card__body"><h3 class="bento-card__title">Scenic Rail Holidays</h3><p class="bento-card__desc">Travel through spectacular landscapes aboard Switzerland’s world-famous panoramic rail journeys and routes.</p><a class="bento-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="bento-card"><img src="assets/img/dest-3.jpg" alt=""><div class="bento-card__body"><h3 class="bento-card__title">Walking Holidays</h3><p class="bento-card__desc">Explore scenic trails, charming villages and stunning mountain landscapes at your own pace.</p><a class="bento-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="bento-card"><img src="assets/img/dest-2.jpg" alt=""><div class="bento-card__body"><h3 class="bento-card__title">Family Holidays</h3><p class="bento-card__desc">Create lasting memories with family-friendly adventures, lakeside fun and mountain discoveries together.</p><a class="bento-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="bento-card"><img src="assets/img/hero-3.jpg" alt=""><div class="bento-card__body"><h3 class="bento-card__title">City Breaks</h3><p class="bento-card__desc">Experience Switzerland’s vibrant cities, historic landmarks, culture, shopping and dining experiences throughout.</p><a class="bento-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="bento-card"><img src="assets/img/dest-4.jpg" alt=""><div class="bento-card__body"><h3 class="bento-card__title">Multi Centre Holidays</h3><p class="bento-card__desc">Combine Switzerland’s most iconic destinations into one seamless and unforgettable holiday journey.</p><a class="bento-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+      <div class="bento">
+        <div class="bento-row bento-row--1">
+          <article class="dest-card htype-card"><img class="dest-card__img" src="assets/img/dest-1.jpg" alt=""><div class="dest-card__body"><h3 class="dest-card__title">Lakes &amp; Mountains</h3><p class="dest-card__desc">Discover Switzerland’s breathtaking alpine scenery, crystal-clear lakes and unforgettable mountain adventures year-round.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+          <article class="dest-card htype-card"><img class="dest-card__img" src="assets/img/hero-1.jpg" alt=""><div class="dest-card__body"><h3 class="dest-card__title">Scenic Rail Holidays</h3><p class="dest-card__desc">Experience Switzerland’s iconic panoramic trains and unforgettable journeys through the Alps.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+          <article class="dest-card htype-card"><img class="dest-card__img" src="assets/img/dest-3.jpg" alt=""><div class="dest-card__body"><h3 class="dest-card__title">Walking Holidays</h3><p class="dest-card__desc">Explore scenic trails, charming villages and stunning mountain landscapes at your own pace.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+        </div>
+        <div class="bento-row bento-row--2">
+          <article class="dest-card htype-card"><img class="dest-card__img" src="assets/img/dest-2.jpg" alt=""><div class="dest-card__body"><h3 class="dest-card__title">Family Holidays</h3><p class="dest-card__desc">Create lasting memories with family-friendly adventures, lakeside fun and mountain discoveries together.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+          <article class="dest-card htype-card"><img class="dest-card__img" src="assets/img/hero-3.jpg" alt=""><div class="dest-card__body"><h3 class="dest-card__title">City Breaks</h3><p class="dest-card__desc">Experience Switzerland’s vibrant cities, historic landmarks, culture, shopping and dining experiences throughout.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+          <article class="dest-card htype-card"><img class="dest-card__img" src="assets/img/dest-4.jpg" alt=""><div class="dest-card__body"><h3 class="dest-card__title">Multi Centre Holidays</h3><p class="dest-card__desc">Combine Switzerland’s most iconic destinations into one seamless and unforgettable holiday journey.</p><a class="dest-card__more" href="#">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+        </div>
       </div>
       <div class="section__actions"><a class="btn btn--primary" href="#">View All Holiday Styles <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
     </div>
@@ -235,9 +322,12 @@
 
   <!-- ===================== 7. EXPERTISE BANNER ===================== -->
   <section class="banner-expertise">
-    <div class="container">
+    <div class="container banner-expertise__inner">
       <div class="banner-expertise__flag" aria-hidden="true"></div>
-      <p><em>Over 20 Years of Swiss Expertise</em>,<br />Perfectly Tailored to You.</p>
+      <p class="banner-expertise__text">Over 20 Years of Swiss Expertise,<br /><em>Perfectly Tailored to You.</em></p>
+      <a class="btn btn--ghost-navy" href="#">MORE ABOUT US
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
     </div>
   </section>
 
@@ -344,14 +434,42 @@
   <section class="collection-band">
     <div class="container">
       <div class="section__header--split">
-        <div><span class="eyebrow" style="display:block;margin-bottom:8px">Our Blog</span><h2>Find Your <em>Inspiration</em></h2></div>
-        <a class="btn btn--primary" href="#">View All Articles <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <div><span class="eyebrow" style="display:block;margin-bottom:8px">Our Blog</span><h2>Find <em>Your Inspiration</em></h2></div>
+        <a class="btn btn--brand" href="#">View All Articles <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
       <div class="card-grid-4">
-        <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-1.jpg" alt=""><div class="dest-card__body"><span class="blog-card__meta">13 Feb 2026</span><h3 class="dest-card__title" style="font-size:17px">Switzerland’s Most Beautiful Lakeside Escapes</h3><a class="dest-card__more" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="dest-card"><img class="dest-card__img" src="assets/img/hero-1.jpg" alt=""><div class="dest-card__body"><span class="blog-card__meta">09 Feb 2026</span><h3 class="dest-card__title" style="font-size:17px">Scenic Swiss Train Journeys for Summer 2027</h3><a class="dest-card__more" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-3.jpg" alt=""><div class="dest-card__body"><span class="blog-card__meta">02 Feb 2026</span><h3 class="dest-card__title" style="font-size:17px">The Ever-Rising Rise of Swiss Multi-Centre Holidays</h3><a class="dest-card__more" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
-        <article class="dest-card"><img class="dest-card__img" src="assets/img/dest-4.jpg" alt=""><div class="dest-card__body"><span class="blog-card__meta">28 Jan 2026</span><h3 class="dest-card__title" style="font-size:17px">Why Interlaken Remains Switzerland’s Summer Hotspot</h3><a class="dest-card__more" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></article>
+        <article class="blog-card">
+          <div class="blog-card__media"><img src="assets/img/dest-1.jpg" alt=""><span class="blog-card__badge">Inspiration</span></div>
+          <div class="blog-card__body">
+            <div class="blog-card__top"><span class="blog-card__date">13 Feb 2026</span><a class="blog-card__link" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+            <h3 class="blog-card__title">Switzerland’s Most Beautiful Lakeside Escapes</h3>
+            <p class="blog-card__desc">Discover sun-soaked shores, elegant resorts and beautiful old towns across Switzerland’s most scenic lakes.</p>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card__media"><img src="assets/img/hero-1.jpg" alt=""><span class="blog-card__badge">Scenic Rail</span></div>
+          <div class="blog-card__body">
+            <div class="blog-card__top"><span class="blog-card__date">09 Feb 2026</span><a class="blog-card__link" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+            <h3 class="blog-card__title">Scenic Swiss Train Journeys for Summer 2027</h3>
+            <p class="blog-card__desc">Panoramic rail journeys through lush alpine landscapes and beside crystal-clear lakes are trending fast.</p>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card__media"><img src="assets/img/dest-3.jpg" alt=""><span class="blog-card__badge">Guides</span></div>
+          <div class="blog-card__body">
+            <div class="blog-card__top"><span class="blog-card__date">02 Feb 2026</span><a class="blog-card__link" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+            <h3 class="blog-card__title">The Ever-Rising Rise of Swiss Multi-Centre Holidays</h3>
+            <p class="blog-card__desc">Travellers are combining lakes, mountains and elegant cities into one unforgettable Swiss holiday.</p>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card__media"><img src="assets/img/dest-4.jpg" alt=""><span class="blog-card__badge">Destinations</span></div>
+          <div class="blog-card__body">
+            <div class="blog-card__top"><span class="blog-card__date">28 Jan 2026</span><a class="blog-card__link" href="#">View Article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
+            <h3 class="blog-card__title">Why Interlaken Remains Switzerland’s Summer Hotspot</h3>
+            <p class="blog-card__desc">Adventure, scenery and iconic mountain views continue to make Interlaken one of Switzerland’s favourites.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -386,15 +504,19 @@
       <div class="footer-news">
         <h4>Stay Updated</h4>
         <p>Join our mailing list to receive the latest updates and travel inspiration</p>
-        <form class="footer-news__form" onsubmit="return false">
-          <input type="text" placeholder="First name"><input type="text" placeholder="Last name"><input type="email" placeholder="Email">
+        <form class="footer-news__form" id="newsletterForm" novalidate>
+          <input type="text" name="first" placeholder="First name" required aria-label="First name">
+          <input type="text" name="last" placeholder="Last name" required aria-label="Last name">
+          <input type="email" name="email" placeholder="Email" required aria-label="Email">
           <button type="submit">SUBSCRIBE</button>
         </form>
+        <p class="footer-news__msg" id="newsletterMsg" role="status" hidden></p>
       </div>
       <div class="footer-copy">© 2026 The Swiss Holiday Company. All rights reserved.</div>
     </div>
   </footer>
 
   <script src="js/hero.js"></script>
+  <script src="js/search.js"></script>
 </body>
 </html>

@@ -19,6 +19,15 @@
 
   --red-500:  #e2231a;   /* Swiss flag / accent (from logo) */
 
+  /* v8 extended surfaces */
+  --gold-400: #f7c62f;
+  --blue-50:  #f1f8fc;
+  --blue-500: #89c2ea;
+  --sand-50:  #fcfaf7;
+  --sand-100: #f8f5ef;
+  --sand-300: #e6ddd0;
+  --sand-400: #d8c8b4;
+
   --neutral-white: #ffffff;
   --neutral-100:   #f8f8f7;
   --neutral-200:   #e3e3df;
@@ -30,8 +39,13 @@
   --surface-default: var(--neutral-white);
   --surface-page:    var(--neutral-white);
   --surface-muted:   var(--neutral-100);
+  --surface-sand:    var(--sand-50);
+  --surface-sand-100:var(--sand-100);
+  --surface-blue:    var(--blue-50);
+  --surface-teal-50: var(--teal-50);
   --surface-brand:   var(--teal-500);
   --surface-primary: var(--navy-500);
+  --accent-gold:     var(--gold-400);
 
   --text-primary: var(--navy-500);
   --text-body:    var(--neutral-600);
@@ -56,11 +70,12 @@
   --space-80: 80px;
   --grid-gap: 24px;
 
-  /* --- Radius -------------------------------------------- */
-  --radius-sm:   4px;
-  --radius-md:   8px;
-  --radius-lg:   16px;
-  --radius-pill: 999px;
+  /* --- Radius (v8: Sm 4, Md 6, Lg 8, Panel 16) ----------- */
+  --radius-sm:    4px;   /* buttons, chips */
+  --radius-md:    6px;
+  --radius-lg:    8px;
+  --radius-panel: 16px;  /* cards, media panels */
+  --radius-pill:  999px;
 
   /* --- Typography ---------------------------------------- */
   /* Azo Sans is the licensed display/nav face. Hanken Grotesk is a
@@ -69,13 +84,20 @@
   --font-display: "Azo Sans", "Hanken Grotesk", system-ui, sans-serif;
   --font-body:    "Montserrat", system-ui, sans-serif;
 
-  --fs-display:   64px;  --lh-display:   1.05;
-  --fs-h2:        40px;  --lh-h2:        1.15;
-  --fs-h3:        28px;  --lh-h3:        1.2;
-  --fs-lead:      18px;  --lh-lead:      1.5;
-  --fs-body:      16px;  --lh-body:      1.5;
-  --fs-body-sm:   14px;  --lh-body-sm:   1.43;
-  --fs-caption:   13px;  --lh-caption:   1.3;
+  /* v8 type scale — Display 64/72 ls-1; H1 48/56; H3 24/32;
+     H4 20/28; H5 18/26; H6 16/24; Body-MD 18/28; Body 16/24;
+     Body-SM 14/20; Eyebrow 13/16 ls .8 */
+  --fs-display:   64px;  --lh-display:   72px;  --ls-display: -1px;
+  --fs-h1:        48px;  --lh-h1:        56px;
+  --fs-h2:        48px;  --lh-h2:        56px;  /* section titles use H1 */
+  --fs-h3:        24px;  --lh-h3:        32px;
+  --fs-h4:        20px;  --lh-h4:        28px;
+  --fs-h5:        18px;  --lh-h5:        26px;
+  --fs-h6:        16px;  --lh-h6:        24px;
+  --fs-lead:      18px;  --lh-lead:      28px;
+  --fs-body:      16px;  --lh-body:      24px;
+  --fs-body-sm:   14px;  --lh-body-sm:   20px;
+  --fs-caption:   13px;  --lh-caption:   16px;  --ls-caption: 0.8px;
 
   --fw-regular:  400;
   --fw-medium:   500;
@@ -83,9 +105,12 @@
   --fw-bold:     700;
 
   /* --- Layout -------------------------------------------- */
-  --container-max: 1440px;
-  --container-pad: 96px;   /* desktop side gutter */
+  --container-max: 1224px;  /* v8 design frame width */
+  --container-pad: 80px;    /* desktop side gutter (Spacing/Section/Horizontal) */
   --hero-height:   720px;
+  --section-pad:   96px;    /* Spacing/Section/Default */
+  --section-pad-compact: 64px;
+  --section-pad-tight:   32px;
 
   /* --- Effects ------------------------------------------- */
   --shadow-sm: 0 1px 2px rgba(0,0,0,.06);

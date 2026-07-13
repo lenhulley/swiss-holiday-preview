@@ -38,13 +38,14 @@ h3 { font-size: var(--fs-h3);      line-height: var(--lh-h3); }
   align-items: center;
   justify-content: center;
   gap: var(--space-8);
-  padding: var(--space-12) var(--space-24);
+  padding: 13px var(--space-32);   /* ~44px tall (v8 ui/button min-h 44) */
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold);
   line-height: 1;
   border: 1.5px solid transparent;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);   /* v8: buttons are 4px, not pills */
+  white-space: nowrap;
   transition: background-color .18s ease, color .18s ease, border-color .18s ease;
 }
 .btn--brand   { background: var(--surface-brand);   color: var(--text-inverse); }
@@ -53,7 +54,7 @@ h3 { font-size: var(--fs-h3);      line-height: var(--lh-h3); }
 .btn--primary:hover { background: var(--navy-700); }
 .btn--ghost   { background: transparent; color: var(--text-inverse); border-color: rgba(255,255,255,.85); }
 .btn--ghost:hover   { background: rgba(255,255,255,.15); }
-.btn--radius-sm { border-radius: var(--radius-sm); }
+.btn--pill { border-radius: var(--radius-pill); }
 .btn .btn__icon { width: 20px; height: 20px; flex: 0 0 auto; }
 
 /* small caps caption label used across sections */

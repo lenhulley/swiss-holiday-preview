@@ -8,21 +8,29 @@
   position: absolute;
   inset: 0 0 auto 0;
   z-index: 10;
+  background: rgba(255,255,255,.10);   /* v8 frosted bar */
+  backdrop-filter: blur(2px);
 }
+.site-header > .container { padding-block: 12px; }
 .nav-desktop__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 116px;
+  height: 88px;   /* v8 logo height; bar = 88 + 12*2 = 112 */
 }
 .nav-desktop__list {
   display: flex;
   align-items: center;
-  gap: var(--space-32);
+  gap: var(--space-8);
   list-style: none;
   margin: 0; padding: 0;
 }
 .nav-desktop__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 13px;
+  white-space: nowrap;
   font-family: var(--font-display);
   font-size: 16px;
   font-weight: var(--fw-medium);
@@ -30,6 +38,31 @@
   text-shadow: 0 1px 3px rgba(0,0,0,.25);
 }
 .nav-desktop__list a:hover { opacity: .85; }
+.nav-caret { width: 20px; height: 20px; flex: 0 0 auto; opacity: .95; transition: transform .2s ease; }
+.has-menu:hover .nav-caret, .has-menu:focus-within .nav-caret { transform: rotate(180deg); }
+.nav-user { width: 20px; height: 20px; flex: 0 0 auto; }
+
+/* Nav dropdown menus */
+.has-menu { position: relative; }
+.nav-menu {
+  position: absolute; top: calc(100% + 4px); left: 0; z-index: 30;
+  min-width: 240px;
+  display: grid; grid-template-columns: 1fr; gap: 2px;
+  background: #fff; border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+  padding: var(--space-8);
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .16s ease, transform .16s ease, visibility .16s;
+}
+.has-menu:hover .nav-menu, .has-menu:focus-within .nav-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-menu a {
+  display: block; padding: 9px 12px; border-radius: var(--radius-sm);
+  font-family: var(--font-body); font-size: 14px; font-weight: var(--fw-medium);
+  color: var(--navy-500); white-space: nowrap; text-shadow: none;
+}
+.nav-menu a:hover { background: var(--teal-50); color: var(--teal-700); opacity: 1; }
+/* Destinations & Holiday Styles get two columns (more items) */
+.has-menu:nth-child(1) .nav-menu, .has-menu:nth-child(3) .nav-menu { grid-template-columns: 1fr 1fr; min-width: 340px; }
 
 /* Brand lockup (CSS recreation of the logo; swap for supplied asset later) */
 .brand { display: flex; align-items: center; gap: 12px; }
@@ -47,13 +80,9 @@
 .brand__flag::before { width: 22px; height: 7px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
 .brand__flag::after  { width: 7px; height: 22px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
 .brand__word { line-height: 1; }
-.brand__the    { font-family: var(--font-display); font-size: 13px; color: var(--neutral-500); display: block; }
-.brand__swiss  { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--red-500); display: block; letter-spacing: .5px; }
-.brand__co     { font-family: var(--font-display); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--neutral-500); display: block; }
-/* On the hero (dark imagery) the wordmark greys read light */
-.site-header .brand__the,
-.site-header .brand__co { color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.3); }
-.site-header .brand__swiss { color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.35); }
+.brand__the    { font-family: var(--font-display); font-size: 13px; color: var(--navy-500); display: block; margin-bottom: 1px; }
+.brand__swiss  { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--navy-500); display: block; letter-spacing: .2px; line-height: .95; }
+.brand__co     { font-family: var(--font-display); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-500); display: block; margin-top: 2px; }
 
 .nav-desktop__right { display: flex; align-items: center; gap: var(--space-24); }
 
@@ -98,7 +127,7 @@
 }
 .hero__cta { align-self: flex-start; }
 
-/* hero pagination dots */
-.hero__dots { display: flex; gap: 10px; position: relative; z-index: 2; }
+/* hero pagination dots — hidden in v8 (auto-rotate, no visible controls) */
+.hero__dots { display: none; gap: 10px; position: relative; z-index: 2; }
 .hero__dot { width: 10px; height: 10px; border-radius: 999px; background: rgba(255,255,255,.5); border: 0; }
 .hero__dot.is-active { background: #fff; width: 28px; }
