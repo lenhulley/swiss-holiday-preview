@@ -39,30 +39,55 @@
 }
 .nav-desktop__list a:hover { opacity: .85; }
 .nav-caret { width: 14px; height: auto; flex: 0 0 auto; opacity: .95; transition: transform .2s ease; }
-.has-menu:hover .nav-caret, .has-menu:focus-within .nav-caret { transform: rotate(180deg); }
+.has-menu:hover .nav-caret, .has-menu:focus-within .nav-caret, .has-menu.is-open .nav-caret { transform: rotate(180deg); }
 .nav-user { width: 20px; height: 20px; flex: 0 0 auto; }
 
-/* Nav dropdown menus */
-.has-menu { position: relative; }
-.nav-menu {
-  position: absolute; top: calc(100% + 4px); left: 0; z-index: 30;
-  min-width: 240px;
-  display: grid; grid-template-columns: 1fr; gap: 2px;
-  background: #fff; border-radius: var(--radius-md);
-  box-shadow: 0 12px 30px rgba(0,0,0,.18);
-  padding: var(--space-8);
-  opacity: 0; visibility: hidden; transform: translateY(-6px);
-  transition: opacity .16s ease, transform .16s ease, visibility .16s;
+/* ---------- Full-width mega-menu -------------------------- */
+.has-menu > a { cursor: pointer; }
+.mega-wrap {
+  position: absolute; top: 100%; left: 0; right: 0; z-index: 40;
+  padding: 0 var(--container-pad);
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  pointer-events: none;
 }
-.has-menu:hover .nav-menu, .has-menu:focus-within .nav-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-.nav-menu a {
-  display: block; padding: 9px 12px; border-radius: var(--radius-sm);
-  font-family: var(--font-body); font-size: 14px; font-weight: var(--fw-medium);
-  color: var(--navy-500); white-space: nowrap; text-shadow: none;
+#siteHeader.mega-open .mega-wrap { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+.mega__panel {
+  width: 100%; max-width: calc(var(--container-max) - var(--container-pad) * 2);
+  margin: 0 auto;
+  display: flex; align-items: stretch;
+  background: #fff; border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: 0 24px 48px rgba(0,20,40,.22);
+  overflow: hidden;
 }
-.nav-menu a:hover { background: var(--teal-50); color: var(--teal-700); opacity: 1; }
-/* Destinations & Holiday Styles get two columns (more items) */
-.has-menu:nth-child(1) .nav-menu, .has-menu:nth-child(3) .nav-menu { grid-template-columns: 1fr 1fr; min-width: 340px; }
+/* Left promo panel */
+.mega__feature { width: 300px; flex: 0 0 300px; background: var(--teal-50); padding: var(--space-32); display: flex; flex-direction: column; gap: var(--space-16); }
+.mega__feature-img { border-radius: var(--radius-lg); overflow: hidden; }
+.mega__feature-img img { width: 100%; height: 148px; object-fit: cover; display: block; }
+.mega__feature-text strong { display: block; font-family: var(--font-body); font-size: 16px; font-weight: var(--fw-semibold); color: #4d4d48; margin-bottom: var(--space-2); }
+.mega__feature-text p { margin: 0; font-size: 16px; line-height: 24px; color: var(--neutral-500); }
+.mega__actions { display: flex; flex-direction: column; gap: var(--space-8); margin-top: auto; }
+.mega__btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-8); height: 44px; background: var(--navy-500); color: #fff; border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: var(--fw-medium); font-size: 16px; }
+.mega__btn:hover { background: var(--navy-700); }
+.mega__btn svg, .mega__btn-ic { width: 22px; height: 22px; flex: 0 0 auto; }
+/* Center columns */
+.mega__cols-area { flex: 1 1 auto; padding: var(--space-24) var(--space-32); min-width: 0; }
+.mega__cols { display: none; gap: var(--space-32); }
+.mega__cols.is-active { display: flex; }
+.mega__col { flex: 1 1 0; min-width: 0; }
+.mega__col-title { font-family: var(--font-body); font-size: 16px; font-weight: var(--fw-semibold); color: #4d4d48; margin: 0 0 var(--space-8); }
+.mega__col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-4); }
+.mega__col a { font-family: var(--font-body); font-size: 15px; line-height: 22px; font-weight: var(--fw-regular); color: var(--neutral-600); text-shadow: none; }
+.mega__col a:hover { color: var(--teal-600); opacity: 1; }
+.mega__viewall { font-weight: var(--fw-semibold); color: #4d4d48 !important; }
+/* Right featured card */
+.mega__card { flex: 0 0 200px; display: flex; flex-direction: column; gap: var(--space-8); padding: var(--space-24) var(--space-24) var(--space-24) 0; align-self: flex-start; }
+.mega__card-img { width: 100%; height: 148px; object-fit: cover; border-radius: var(--radius-lg); }
+.mega__card-title { font-family: var(--font-display); font-size: 17px; line-height: 1.3; font-weight: var(--fw-semibold); color: var(--navy-500); margin-top: var(--space-4); }
+.mega__card-sub { font-size: 14px; line-height: 20px; color: var(--neutral-600); }
+.mega__card-btn { margin-top: var(--space-4); display: inline-flex; align-items: center; justify-content: center; gap: var(--space-8); height: 40px; background: var(--teal-500); color: #fff; border-radius: var(--radius-sm); font-size: 14px; font-weight: var(--fw-semibold); }
+.mega__card-btn svg { width: 18px; height: 18px; }
+.mega__card:hover .mega__card-btn { background: var(--teal-600); }
 
 /* Brand lockup (CSS recreation of the logo; swap for supplied asset later) */
 .brand { display: flex; align-items: center; gap: 12px; }

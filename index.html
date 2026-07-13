@@ -39,39 +39,185 @@
           </button>
           <nav class="nav-desktop__right" id="navPanel">
             <ul class="nav-desktop__list">
-              <li class="has-menu">
-                <a href="#" aria-haspopup="true">Holiday Styles <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a>
-                <div class="nav-menu">
-                  <a href="#">Lakes &amp; Mountains</a><a href="#">Scenic Rail Holidays</a><a href="#">Walking Holidays</a>
-                  <a href="#">Family Holidays</a><a href="#">City Breaks</a><a href="#">Multi Centre Holidays</a>
-                </div>
-              </li>
-              <li class="has-menu">
-                <a href="#" aria-haspopup="true">Scenic Rail <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a>
-                <div class="nav-menu">
-                  <a href="#">Glacier Express</a><a href="#">Bernina Express</a><a href="#">GoldenPass Express</a><a href="#">Luzern–Interlaken Express</a>
-                </div>
-              </li>
-              <li class="has-menu">
-                <a href="#" aria-haspopup="true">Destinations <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a>
-                <div class="nav-menu">
-                  <a href="#">Interlaken</a><a href="#">Zermatt</a><a href="#">Lucerne</a><a href="#">Grindelwald</a>
-                  <a href="#">St. Moritz</a><a href="#">Zurich</a><a href="#">Geneva</a><a href="#">Davos</a>
-                </div>
-              </li>
-              <li class="has-menu">
-                <a href="#" aria-haspopup="true">Support <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a>
-                <div class="nav-menu">
-                  <a href="#">Contact Us</a><a href="#">FAQs</a><a href="#">Travel Updates</a><a href="#">ATOL Protection</a>
-                </div>
-              </li>
+              <li class="has-menu" data-mega="holiday"><a href="#" aria-haspopup="true">Holiday Styles <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a></li>
+              <li class="has-menu" data-mega="rail"><a href="#" aria-haspopup="true">Scenic Rail <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a></li>
+              <li class="has-menu" data-mega="dest"><a href="#" aria-haspopup="true">Destinations <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a></li>
+              <li class="has-menu" data-mega="support"><a href="#" aria-haspopup="true">Support <img class="nav-caret" src="assets/figma/ic-chevron.svg" alt="" aria-hidden="true"></a></li>
               <li class="nav-account"><a href="#"><img class="nav-user" src="assets/figma/ic-user.svg" alt="" aria-hidden="true"> Manage Booking</a></li>
             </ul>
             <a class="btn btn--brand" href="#">Contact Us</a>
           </nav>
         </div>
       </div>
-    </header>
+      <div class="mega-wrap" id="megaWrap">
+      <div class="mega__panel">
+      <aside class="mega__feature">
+        <div class="mega__feature-img"><img src="assets/img/r/mega-broch.jpg" alt="Our latest Swiss brochures"></div>
+        <div class="mega__feature-text">
+          <strong>Order our latest brochure</strong>
+          <p>Explore our full collection of Swiss holidays, scenic rail journeys and curated itineraries.</p>
+        </div>
+        <div class="mega__actions">
+          <a class="mega__btn" href="#">Request a brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          <a class="mega__btn" href="#"><img class="mega__btn-ic" src="assets/figma/ic-download.svg" alt="" aria-hidden="true"> Read Online</a>
+        </div>
+      </aside>
+      <div class="mega__cols-area">
+        <div class="mega__cols" data-cols="holiday">
+          <div class="mega__col">
+            <h4 class="mega__col-title">Signature Holidays</h4>
+            <ul>
+              <li><a href="#">Lakes &amp; Mountains</a></li>
+              <li><a href="#">Winter Ski &amp; Sports</a></li>
+              <li><a href="#">City Breaks</a></li>
+              <li><a href="#">Walking Holidays</a></li>
+              <li><a href="#">Multi Centres</a></li>
+              <li><a href="#">Weekend Breaks</a></li>
+              <li><a href="#">Long Stay Vacations</a></li>
+              <li><a href="#">Scenic Rail Travel</a></li>
+              <li><a class="mega__viewall" href="#">View all holidays &gt;</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">Traveller Types</h4>
+            <ul>
+              <li><a href="#">Family Holidays</a></li>
+              <li><a href="#">Couples Escapes</a></li>
+              <li><a href="#">Solo Travellers</a></li>
+              <li><a href="#">Small Group Tours</a></li>
+              <li><a href="#">Wellness Retreats</a></li>
+              <li><a href="#">Food &amp; Wine Experiences</a></li>
+              <li><a href="#">First-Time Switzerland</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">Seasonal Styles</h4>
+            <ul>
+              <li><a href="#">Winter Ski</a></li>
+              <li><a href="#">Winter Walking</a></li>
+              <li><a href="#">Festive Breaks</a></li>
+              <li><a href="#">Christmas Markets</a></li>
+              <li><a href="#">May Spring Holidays</a></li>
+              <li><a href="#">Autumn Holidays</a></li>
+              <li><a href="#">Winter Scenic Routes</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mega__cols" data-cols="rail">
+          <div class="mega__col">
+            <h4 class="mega__col-title">Scenic Rail Journeys</h4>
+            <ul>
+              <li><a href="#">Glacier Express</a></li>
+              <li><a href="#">Bernina Express</a></li>
+              <li><a href="#">GoldenPass Express</a></li>
+              <li><a href="#">Luzern-Interlaken Express</a></li>
+              <li><a href="#">Gotthard Panorama Express</a></li>
+              <li><a href="#">Treno Gottardo</a></li>
+              <li><a href="#">Winter scenic rail</a></li>
+              <li><a class="mega__viewall" href="#">View all scenic rail routes &gt;</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">Popular Itineraries</h4>
+            <ul>
+              <li><a href="#">Supreme Glacier Express</a></li>
+              <li><a href="#">Heart Of Scenic Switzerland</a></li>
+              <li><a href="#">Hidden Treasures</a></li>
+              <li><a href="#">GoldenPass Discovery</a></li>
+              <li><a href="#">Explore Switzerland's Variety</a></li>
+              <li><a href="#">Lakeside Pleasures</a></li>
+              <li><a href="#">Magical Winter Lake &amp; Mountain</a></li>
+              <li><a class="mega__viewall" href="#">View more itineraries &gt;</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mega__cols" data-cols="dest">
+          <div class="mega__col">
+            <h4 class="mega__col-title">Regions</h4>
+            <ul>
+              <li><a href="#">Bernese Oberland</a></li>
+              <li><a href="#">Central Switzerland</a></li>
+              <li><a href="#">Lake Geneva (Vaud)</a></li>
+              <li><a href="#">Ticino</a></li>
+              <li><a href="#">Valais</a></li>
+              <li><a href="#">Graubünden</a></li>
+              <li><a href="#">Eastern Switzerland</a></li>
+              <li><a class="mega__viewall" href="#">View all Regions &gt;</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">Popular Resorts</h4>
+            <ul>
+              <li><a href="#">Interlaken</a></li>
+              <li><a href="#">Lucerne</a></li>
+              <li><a href="#">Montreux</a></li>
+              <li><a href="#">Bönigen</a></li>
+              <li><a href="#">Spiez</a></li>
+              <li><a href="#">Merligen</a></li>
+              <li><a href="#">Zermatt</a></li>
+              <li><a href="#">Saas-Fee</a></li>
+              <li><a href="#">Crans-Montana</a></li>
+              <li><a href="#">St. Moritz</a></li>
+              <li><a href="#">Gstaad</a></li>
+              <li><a class="mega__viewall" href="#">Resorts Map &gt;</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">Additional Information</h4>
+            <ul>
+              <li><a href="#">View Switzerland Hotels</a></li>
+              <li><a href="#">View City Breaks</a></li>
+              <li><a href="#">Lakeside Resorts</a></li>
+              <li><a href="#">Mountain Resorts</a></li>
+              <li><a href="#">Hidden Gems</a></li>
+              <li><a href="#">Winter Ski Resorts</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mega__cols" data-cols="support">
+          <div class="mega__col">
+            <h4 class="mega__col-title">Planning</h4>
+            <ul>
+              <li><a href="#">Latest Offers &amp; Promotions</a></li>
+              <li><a href="#">Frequently Asked Questions</a></li>
+              <li><a href="#">Travel Advice</a></li>
+              <li><a href="#">Useful Travel Guides</a></li>
+              <li><a href="#">Booking Excursions</a></li>
+              <li><a href="#">Deposits &amp; Payments</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">Concierge</h4>
+            <ul>
+              <li><a href="#">Tailor Made Itineraries</a></li>
+              <li><a href="#">Flight Arrangements</a></li>
+              <li><a href="#">Baggage Services</a></li>
+              <li><a href="#">1st Class Rail Travel</a></li>
+              <li><a href="#">Interrail Passes</a></li>
+            </ul>
+          </div>
+          <div class="mega__col">
+            <h4 class="mega__col-title">About Us</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Why Book With Us</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Our Brochures</a></li>
+              <li><a href="#">Newsletter Signup</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a class="mega__card" href="#">
+        <img class="mega__card-img" src="assets/img/r/mega-featured.jpg" alt="">
+        <strong class="mega__card-title">Looking for some inspiration?</strong>
+        <span class="mega__card-sub">Switzerland’s Most Beautiful Lakeside Escapes</span>
+        <span class="mega__card-btn">View more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>
+      </div>
+    </div>
+  </header>
 
     <!-- hero content -->
     <div class="container hero__content">

@@ -52,7 +52,7 @@
   .nav-desktop__list { flex-direction: column; gap: 0; width: 100%; }
   .nav-desktop__list a { display: flex; justify-content: space-between; padding: 15px var(--container-pad); text-shadow: none; }
   .nav-desktop__list a:hover { background: rgba(255,255,255,.08); }
-  .nav-menu { display: none; }               /* dropdowns collapse on mobile */
+  .nav-menu, .mega-wrap { display: none; }    /* mega-menu collapses on mobile */
   .nav-desktop__right .btn { margin: var(--space-12) var(--container-pad) var(--space-8); justify-content: center; }
 }
 
