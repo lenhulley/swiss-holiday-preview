@@ -506,7 +506,10 @@
         <form class="footer-news__form" id="newsletterForm" novalidate>
           <input type="text" name="first" placeholder="First name" required aria-label="First name">
           <input type="text" name="last" placeholder="Last name" required aria-label="Last name">
-          <input type="email" name="email" placeholder="Email" required aria-label="Email">
+          <div class="footer-input">
+            <img class="footer-input__icon" src="assets/figma/ic-mail.svg" alt="" aria-hidden="true">
+            <input type="email" name="email" placeholder="Email" required aria-label="Email">
+          </div>
           <button type="submit">SUBSCRIBE</button>
         </form>
         <p class="footer-news__msg" id="newsletterMsg" role="status" hidden></p>

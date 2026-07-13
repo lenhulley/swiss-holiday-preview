@@ -315,6 +315,10 @@ h1 em, h2 em, h3 em, .hero__title em { font-style: italic; }
 .footer-news__form { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-16); }
 .footer-news__form input { padding: 14px var(--space-12); border-radius: var(--radius-lg); border: 1px solid var(--border-default); background: var(--neutral-white); color: var(--navy-500); font-size: 15px; }
 .footer-news__form input::placeholder { color: var(--neutral-500); }
+.footer-input { display: flex; align-items: center; gap: var(--space-8); background: var(--neutral-white); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 0 var(--space-12); }
+.footer-input__icon { width: 22px; height: 18px; flex: 0 0 auto; }
+.footer-input input { flex: 1 1 auto; min-width: 0; border: 0; background: none; border-radius: 0; padding: 14px 0; }
+.footer-news__form .footer-input:has(input.is-invalid) { border-color: #ff8a80; box-shadow: 0 0 0 2px rgba(255,138,128,.25); }
 .footer-news__form input.is-invalid { border-color: #ff8a80; box-shadow: 0 0 0 2px rgba(255,138,128,.25); }
 .footer-news__form button { grid-column: 1; justify-self: start; width: auto; margin-top: var(--space-4); background: var(--teal-500); color: #fff; border: 0; border-radius: var(--radius-sm); padding: 12px var(--space-32); font-weight: 700; letter-spacing: .04em; }
 .footer-news__form button:hover { background: var(--teal-600); }
